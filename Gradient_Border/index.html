@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Bordered Cards</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100vh;
+            background-color: #000;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            position: relative;
+            width: 300px;
+            height: 420px;
+            background-color: #090221;
+            transition: .3s;
+            overflow: hidden;
+        }
+        .box:hover{
+            transform: translateY(-15px);
+        }
+        .box::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 560px;
+            height: 50px;
+            transform: rotate(-40deg) translateY(-100px);
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+        }
+        .box:hover::after{
+            animation: border-effect 1.2s ease;
+        }
+        @keyframes border-effect {
+            0%{
+                transform: rotate(-40deg) translateY(-100px);
+            }
+            100%{
+                transform: rotate(-40deg) translateY(530px);
+            }
+        }
+        .text-content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            background-color: #090221;
+            width: 295px;
+            height: 415px;
+            z-index: 10;
+            color: #fff;
+            font-family: 'Poppins' , sans-serif;
+            padding:0 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .text-content a{
+            text-decoration: none;
+            display: block;
+            width: 140px;
+            height: 45px;
+            text-align: center;
+            color: #fff;
+            line-height: 43px;
+            border: 2px solid #fff;
+        }
+        .box-two::after{
+            background: linear-gradient(to right, #f1994a, #f2c94c);
+        }
+        .box-three::after{
+            background: linear-gradient(to right, #dce35b, #45b649);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="text-content">
+            <h2>Heading</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Quisquam fugiat minima voluptatum? Consequuntur maiores unde 
+                cupiditate dignissimos quia harum ut animi aspernatur, rerum ipsa? 
+                Quidem quia fugiat excepturi totam quis.
+            </p>
+            <a href="#">Learn more</a>
+        </div>
+    </div>
+    <div class="box box-two">
+        <div class="text-content">
+            <h2>Heading</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Quisquam fugiat minima voluptatum? Consequuntur maiores unde 
+                cupiditate dignissimos quia harum ut animi aspernatur, rerum ipsa? 
+                Quidem quia fugiat excepturi totam quis.
+            </p>
+            <a href="#">Learn more</a>
+        </div>
+    </div>
+    <div class="box box-three">
+        <div class="text-content">
+            <h2>Heading</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Quisquam fugiat minima voluptatum? Consequuntur maiores unde 
+                cupiditate dignissimos quia harum ut animi aspernatur, rerum ipsa? 
+                Quidem quia fugiat excepturi totam quis.
+            </p>
+            <a href="#">Learn more</a>
+        </div>
+    </div>
+</body>
+</html>

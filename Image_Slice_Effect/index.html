@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice Image</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #090221;
+        }
+        .img{
+            position: relative;
+            display: flex;
+        }
+        .slice{
+            width: 120px;
+            height: 350px;
+            transition: .5s;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: .3s ease;
+            cursor: pointer;
+        }
+        .img-one{
+            background-image: url(https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG98ZW58MHx8MHx8&w=1000&q=80);
+        }
+        .img-two{
+            background-image: url(https://blog.hootsuite.com/wp-content/uploads/2021/07/free-stock-photos-12.jpeg);
+        }
+        .img-three{
+            background-image: url(https://images.unsplash.com/photo-1554844453-7ea2a562a6c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&w=1000&q=80);
+        }
+        .slice-two{
+            background-position: -120px 0;
+        }
+        .img:hover .slice-one{
+            transform: translate(-50px , -20px) skewX(10deg);
+        }
+        .img:hover .slice-two{
+            transform: translate(50px , 20px) skewX(10deg);
+        }
+    </style>
+</head>
+<body>
+        <div class="img">
+            <div class="slice slice-one img-one"></div>
+            <div class="slice slice-two img-one"></div>
+        </div>
+        <div class="img">
+            <div class="slice slice-one img-two"></div>
+            <div class="slice slice-two img-two"></div>
+        </div>
+        <div class="img">
+            <div class="slice slice-one img-three"></div>
+            <div class="slice slice-two img-three"></div>
+        </div>
+</body>
+</html>
