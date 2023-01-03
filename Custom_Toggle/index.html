@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="checkbox"]{
+            position: relative;
+            appearance: none;
+            width: 60px;
+            height: 35px;
+            background: #d8d9db;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        input::after{
+            content: "";
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            width: 33px;
+            height: 33px;
+            background: #fff;
+            border-radius: 50%;
+            transition: .1s;
+        }
+        input:checked{
+            background: #4db865;
+        }
+        input:checked::after{
+            transform: translateX(23px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" name="" id="">
+    </div>
+</body>
+</html>

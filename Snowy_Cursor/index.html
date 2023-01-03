@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #090221;
+            overflow: hidden;
+        }
+        .text{
+            font-size: 70px;
+            font-weight: bold;
+        }
+        span{
+            width: 50px;
+            height: 50px;
+            background: url(https://www.pngall.com/wp-content/uploads/5/Snow-PNG-Image-File.png);
+            background-size: cover;
+            pointer-events: none;
+            position: absolute;
+            animation: snow 2s linear forwards;
+        }
+        @keyframes snow {
+            0%{
+                opacity: 1;
+                filter: hue-rotate(0deg)
+            }
+            100%{
+                transform: translate(50%, 1000%);
+                filter: hue-rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        Happy New Year
+    </div>
+
+    <script>
+        document.onmousemove = (e) =>{
+            let body = document.querySelector('body');
+            let snow = document.createElement('span');
+            let x = e.pageX;
+            let y = e.pageY;
+            let size = Math.random() * 50;
+
+            snow.style.left = x + 'px';
+            snow.style.top = y + 'px';
+            snow.style.width = size + 'px';
+            snow.style.height = size + 'px';
+            body.appendChild(snow);
+
+            setTimeout(()=>{
+                snow.remove();
+            }, 2000)
+        }
+    </script>
+</body>
+</html>
